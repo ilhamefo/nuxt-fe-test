@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  porto_web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: porto_web
+    networks:
+      - app-network
+    ports:
+      - 8001:3000
+networks:
+  app-network:
+    name: efo_networks
+    driver: bridge

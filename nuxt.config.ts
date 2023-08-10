@@ -1,0 +1,10 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  // devtools: { enabled: true },
+  css: ['~/assets/styles/main.scss'],
+  runtimeConfig: {
+    public: {
+      API_BASE_URL: process.env.BE_URL
+    },
+  }
+})
