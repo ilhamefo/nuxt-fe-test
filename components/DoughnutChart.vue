@@ -7,6 +7,8 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "vue-chartjs";
 import axios from "axios";
+const config = useRuntimeConfig();
+const baseUrl = config.public.API_BASE_URL;
 const labels = ref([]);
 const dataApi = ref([]);
 const loaded = ref(false);
@@ -31,7 +33,7 @@ const options = ref({
 function getCount() {
   loaded.value = false;
   axios
-    .get("http://localhost:8000/api/count_customer_by_gender")
+    .get(`${baseUrl}/count_customer_by_gender`)
     .then((response) => {
       labels.value = response.data.data.labels;
       dataApi.value = response.data.data.count;

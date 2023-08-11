@@ -31,6 +31,7 @@ const labels = ref([]);
 const data = ref([]);
 const loaded = ref(false);
 
+
 const chartData = ref({
   labels: labels,
   datasets: [
@@ -61,7 +62,7 @@ function getCustomer(url) {
 
 function getCount() {
   loaded.value = false;
-  axios.get("http://localhost:8000/api/count_customer").then((response) => {
+  axios.get(`${baseUrl}/count_customer_by_gender`).then((response) => {
     labels.value = response.data.data.labels;
     data.value = response.data.data.count;
     loaded.value = true;
