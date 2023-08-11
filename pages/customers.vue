@@ -62,7 +62,7 @@ function getCustomer(url) {
 
 function getCount() {
   loaded.value = false;
-  axios.get(`${baseUrl}/count_customer_by_gender`).then((response) => {
+  axios.get(`${baseUrl}/count_customer`).then((response) => {
     labels.value = response.data.data.labels;
     data.value = response.data.data.count;
     loaded.value = true;
