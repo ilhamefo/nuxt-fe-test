@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   // devtools: { enabled: true },
   css: ['~/assets/styles/main.scss'],
+  modules: ['@sidebase/nuxt-pdf'],
   runtimeConfig: {
     public: {
       API_BASE_URL: process.env.BE_URL

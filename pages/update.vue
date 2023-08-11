@@ -115,7 +115,6 @@ const baseUrl = config.public.API_BASE_URL;
 const baseUrlLocation = "https://ibnux.github.io/data-indonesia/";
 
 onMounted(() => {
-    console.log(config);
     getCustomerById(route.currentRoute.value.query.idCustomer).finally(() => {
         getProvince();
         getCity(customersData.value.data.province)
