@@ -4,7 +4,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: porto_web
+    container_name: app_fe_test
     networks:
       - app-network
     ports:
